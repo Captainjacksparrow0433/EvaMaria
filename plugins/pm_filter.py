@@ -559,9 +559,9 @@ Query: {search}
 🎭 Genres: {imdb.get('genres')}
 📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
 🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
-👤 Requested By: {message.from_user.mention}
+👤 Requested By: {query.from_user.mention}
 🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>
-📤 Uploaded by: {message.chat.title}""",
+📤 Uploaded by: {title}""",
  
       reply_markup=InlineKeyboardMarkup(btn))
 
@@ -573,9 +573,9 @@ Query: {search}
 🎭 Genres: {imdb.get('genres')}
 📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
 🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
-👤 Requested By: {message.from_user.mention}
+👤 Requested By: {query.from_user.mention}
 🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>
-📤 Uploaded by: {message.chat.title}"""", 
+📤 Uploaded by: {title}""", 
 
       reply_markup=InlineKeyboardMarkup(btn))
 
