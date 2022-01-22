@@ -24,6 +24,7 @@ BUTTONS = {}
 async def give_filter(client,message):
     group_id = message.chat.id
     name = message.text
+    chat_name = remove_emoji(message.chat.title)
 
     keywords = await get_filters(group_id)
     for keyword in reversed(sorted(keywords, key=len)):
@@ -556,7 +557,7 @@ async def auto_filter(client, message):
 
         elif imdb:
 
-            await message.reply_text(f"<b>Query: {search}</b> \n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n👤 Requested By: {update.from_user.mention}\n🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>\n📤 Uploaded by: {update.chat.title}", reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_text(f"<b>Query: {search}</b> \n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n👤 Requested By: {message.from_user.mention}\n🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>\n📤 Uploaded by: {message.chat.title}", reply_markup=InlineKeyboardMarkup(btn))
 
         else:
 
