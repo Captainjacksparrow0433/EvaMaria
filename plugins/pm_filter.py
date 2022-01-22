@@ -24,7 +24,7 @@ BUTTONS = {}
 async def give_filter(client,message):
     group_id = message.chat.id
     name = message.text
-    chat_name = remove_emoji(message.chat.title)
+    chat_name = message.chat.title
 
     keywords = await get_filters(group_id)
     for keyword in reversed(sorted(keywords, key=len)):
